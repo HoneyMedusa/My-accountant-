@@ -15,7 +15,6 @@ import StockManagement from './components/StockManagement';
 import CashUps from './components/CashUps';
 import Expenses from './components/Expenses';
 import History from './components/History';
-import Chatbot from './components/Chatbot';
 import ThemeToggle from './components/ThemeToggle';
 import { View, UserProfile } from './types';
 
@@ -85,8 +84,6 @@ export default function App() {
         return <Expenses userId={user.uid} />;
       case 'history':
         return <History userId={user.uid} />;
-      case 'chatbot':
-        return <Chatbot />;
       default:
         return <Dashboard userId={user.uid} />;
     }

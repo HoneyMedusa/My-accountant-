@@ -29,7 +29,6 @@ export default function Sidebar({ currentView, setCurrentView, businessName, onC
     { id: 'cashups', label: 'CASH-UPS', icon: Receipt },
     { id: 'expenses', label: 'EXPENSES', icon: TrendingDown },
     { id: 'history', label: 'REPORTS', icon: History },
-    { id: 'chatbot', label: 'AI ASSISTANT', icon: MessageSquare },
   ];
 
   return (

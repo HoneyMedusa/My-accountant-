@@ -45,4 +45,4 @@ export interface CashUpRecord {
   createdAt: any;
 }
 
-export type View = 'dashboard' | 'stock' | 'cashups' | 'expenses' | 'history' | 'chatbot';
+export type View = 'dashboard' | 'stock' | 'cashups' | 'expenses' | 'history';
