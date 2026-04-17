@@ -4,9 +4,6 @@ import {
   Package, 
   Receipt, 
   History, 
-  MessageSquare, 
-  LogOut,
-  Building2,
   X,
   TrendingDown
 } from 'lucide-react';
@@ -69,17 +66,10 @@ export default function Sidebar({ currentView, setCurrentView, businessName, onC
         })}
       </nav>
 
-      <div className="pt-4 border-t border-white/10 space-y-4">
-        <div className="text-[0.7rem] text-[#555] font-bold uppercase tracking-wider">
-          PRO PLAN • ZAR SUBSCRIPTION
+      <div className="pt-4 border-t border-white/10 space-y-2">
+        <div className="text-[0.6rem] text-white/30 font-medium uppercase tracking-[0.2em]">
+          Logged in as Guest
         </div>
-        <button
-          onClick={() => auth.signOut()}
-          className="w-full flex items-center gap-3 py-2 text-sm font-bold text-red-500 hover:text-red-400 transition-all text-left"
-        >
-          <LogOut size={18} />
-          SIGN OUT
-        </button>
       </div>
     </div>
   );
