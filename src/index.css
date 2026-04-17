@@ -1,0 +1,112 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", "Helvetica Neue", Arial, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
+}
+
+@layer base {
+  :root {
+    --primary: #1A1A1A;
+    --accent: #0066FF;
+    --success: #00875A;
+    --danger: #DE350B;
+    --bg-main: #F4F7F9;
+    --bg-card: #FFFFFF;
+    --bg-input: #F9FBFC;
+    --text-primary: #1A1A1A;
+    --text-muted: #6B778C;
+    --border: #E0E4E8;
+    --tag-bg: #E3FCEF;
+    --tag-text: #00875A;
+    --chart-1: #1A1A1A;
+    --chart-2: #E0E4E8;
+    --chart-3: #0066FF;
+    --sidebar-bg: #1A1A1A;
+    --sidebar-text: #FFFFFF;
+    --btn-primary-bg: #1A1A1A;
+    --btn-primary-text: #FFFFFF;
+  }
+
+  .dark {
+    --primary: #F4F7F9;
+    --accent: #3385FF;
+    --success: #00A36C;
+    --danger: #FF5252;
+    --bg-main: #0F1214;
+    --bg-card: #1A1E22;
+    --bg-input: #252A30;
+    --text-primary: #EEF1F4;
+    --text-muted: #8E9299;
+    --border: #2D333A;
+    --tag-bg: #0E2D1F;
+    --tag-text: #00875A;
+    --chart-1: #F4F7F9;
+    --chart-2: #2D333A;
+    --chart-3: #4D96FF;
+    --sidebar-bg: #0A0C0E;
+    --sidebar-text: #EEF1F4;
+    --btn-primary-bg: #EEF1F4;
+    --btn-primary-text: #1A1A1A;
+  }
+
+  body {
+    @apply font-sans transition-colors duration-300;
+    background-color: var(--bg-main);
+    color: var(--text-primary);
+  }
+}
+
+.card {
+  @apply rounded-xl border p-6 transition-all;
+  background-color: var(--bg-card);
+  border-color: var(--border);
+}
+
+.card-title {
+  @apply text-[0.85rem] font-extrabold uppercase tracking-wider mb-5 flex justify-between items-center;
+  color: var(--text-primary);
+}
+
+.stat-label {
+  @apply text-[0.75rem] uppercase tracking-[0.1em] font-bold mb-2;
+  color: var(--text-muted);
+}
+
+.stat-value {
+  @apply text-5xl font-black tracking-[-2px] leading-none;
+}
+
+.btn-primary {
+  @apply px-6 py-2 rounded-lg font-bold transition-all uppercase text-xs tracking-wider;
+  background-color: var(--btn-primary-bg);
+  color: var(--btn-primary-text);
+}
+
+.btn-primary:hover {
+  opacity: 0.9;
+}
+
+.btn-secondary {
+  @apply border px-6 py-2 rounded-lg font-bold transition-all uppercase text-xs tracking-wider;
+  border-color: var(--border);
+  color: var(--text-primary);
+}
+
+.btn-secondary:hover {
+  background-color: var(--bg-input);
+}
+
+.input-field {
+  @apply w-full border rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-[#0066FF] focus:border-transparent transition-all text-sm;
+  background-color: var(--bg-input);
+  border-color: var(--border);
+  color: var(--text-primary);
+}
+
+.tag {
+  @apply inline-block px-2 py-0.5 rounded text-[10px] font-bold ml-2;
+  background-color: var(--tag-bg);
+  color: var(--tag-text);
+}

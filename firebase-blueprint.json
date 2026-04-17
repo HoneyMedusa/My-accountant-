@@ -1,0 +1,88 @@
+{
+  "entities": {
+    "User": {
+      "title": "User",
+      "description": "User profile information",
+      "type": "object",
+      "properties": {
+        "uid": { "type": "string" },
+        "email": { "type": "string" },
+        "displayName": { "type": "string" },
+        "businessName": { "type": "string" },
+        "createdAt": { "type": "string", "format": "date-time" }
+      },
+      "required": ["uid", "email"]
+    },
+    "StockRecord": {
+      "title": "Stock Record",
+      "description": "Weekly stock level entry",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "userId": { "type": "string" },
+        "date": { "type": "string", "format": "date" },
+        "items": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "name": { "type": "string" },
+              "quantity": { "type": "number" },
+              "costPerItem": { "type": "number" },
+              "totalValue": { "type": "number" }
+            }
+          }
+        },
+        "totalStockValue": { "type": "number" },
+        "createdAt": { "type": "string", "format": "date-time" }
+      },
+      "required": ["userId", "date", "items", "totalStockValue"]
+    },
+    "CashUpRecord": {
+      "title": "Cash-up Record",
+      "description": "Daily sales entry",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "userId": { "type": "string" },
+        "date": { "type": "string", "format": "date" },
+        "amount": { "type": "number" },
+        "createdAt": { "type": "string", "format": "date-time" }
+      },
+      "required": ["userId", "date", "amount"]
+    },
+    "ExpenseRecord": {
+      "title": "Expense Record",
+      "description": "Business expense entry",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "userId": { "type": "string" },
+        "date": { "type": "string", "format": "date" },
+        "category": { "type": "string" },
+        "amount": { "type": "number" },
+        "description": { "type": "string" },
+        "createdAt": { "type": "string", "format": "date-time" }
+      },
+      "required": ["userId", "date", "category", "amount"]
+    }
+  },
+  "firestore": {
+    "/users/{userId}": {
+      "schema": "User",
+      "description": "User profile documents"
+    },
+    "/users/{userId}/stock_records/{recordId}": {
+      "schema": "StockRecord",
+      "description": "Weekly stock history"
+    },
+    "/users/{userId}/cashups/{recordId}": {
+      "schema": "CashUpRecord",
+      "description": "Daily sales records"
+    },
+    "/users/{userId}/expenses/{recordId}": {
+      "schema": "ExpenseRecord",
+      "description": "Business expense records"
+    }
+  }
+}
